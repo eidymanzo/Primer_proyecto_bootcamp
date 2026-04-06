@@ -7,6 +7,16 @@ body {
     font-family: arial, helvetica, sans-serif;
 }
 
+
+/* enlaces del menú */
+nav a {
+  color:#482B18; /* color del texto */
+  margin: 0 12px; /* separación horizontal entre enlaces */
+  text-decoration: none; /* quita el subrayado */
+  font-weight: bold; /* negrita */
+  font-size: 20px; /* tamaño del texto */
+}
+
 .en_linea {
     display: inline-block;
     align-items: center;
@@ -16,7 +26,7 @@ body {
 }
 
 header {
-    background-color: #8B674F;
+    background-color: #8B674F !important; 
     padding: 20px;
     text-align: center;
 }
@@ -207,4 +217,35 @@ footer {
     background-color: black;
     padding: 5px;
     border-radius: 150px;
+}
+
+body.servicios header {
+  background-image: none;
+  background-color: #4b2e2e; /* color bonito de fondo */
+}
+body.servicios header::before {
+  display: none;
+}
+
+header {
+  background-image: url("images/Imagen HEADER.png"); /* imagen de fondo */
+  background-size: cover; /* hace que la imagen cubra todo el header */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+  color: white; /* color del texto dentro del header */
+  text-align: center; /* centra el texto */
+  padding: 60px 20px; /* espacio interior: arriba/abajo y lados */
+  position: relative; /* sirve de referencia para ::before */
+}
+
+/* capa oscura sobre la imagen del header */
+header::before {
+  content: ""; /* crea el pseudo-elemento */
+  position: absolute; /* se coloca libremente dentro del header */
+  top: 0; /* pegado arriba */
+  left: 0; /* pegado a la izquierda */
+  width: 100%; /* ocupa todo el ancho */
+  height: 100%; /* ocupa todo el alto */
+  background: rgba(0, 0, 0, 0.4); /* negro con transparencia */
+  z-index: 1; /* esta capa queda por encima de la imagen */
 }
